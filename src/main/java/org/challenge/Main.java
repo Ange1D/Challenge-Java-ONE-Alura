@@ -11,6 +11,14 @@ public class Main {
                 JOptionPane.PLAIN_MESSAGE,null,opciones,
                 opciones[0]).toString();
 
-        JOptionPane.showMessageDialog(null,"Selecciono "+opcionSeleccionada);
+
+        switch (opcionSeleccionada){
+            case "Conversor de Moneda": new conversorMonedas().cantidad();
+            case "Conversor de Temperatura": break;
+            default: JOptionPane.showMessageDialog(null,"No es una opcion valida ");
+
+        }
     }
+
+
 }
