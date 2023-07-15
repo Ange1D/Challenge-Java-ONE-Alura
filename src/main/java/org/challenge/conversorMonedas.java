@@ -12,7 +12,7 @@ public class conversorMonedas {
             cantidad = Double.parseDouble(cantidadIngresada);
         }
         catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Debes ingresar un numero", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El valor no es valido, debe ingresar un numero", "Error", JOptionPane.ERROR_MESSAGE);
         }
         return cantidad;
     }
