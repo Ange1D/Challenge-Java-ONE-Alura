@@ -32,6 +32,36 @@ public class conversorMonedas {
         int opcionIndex = Arrays.asList(monedas).indexOf(opcionSeleccionada);
 
         JOptionPane.showMessageDialog(null, new JLabel("Tienes "+ cantidad*valoresMonedas[opcionIndex] + nombreMonedas[opcionIndex] , JLabel.CENTER));
+
+        continuar();
+    }
+
+    public void continuar(){
+
+        String[] opciones = new String[3];
+        opciones[0] = "Si";
+        opciones[1] = "No";
+        opciones[2] = "Cancelar";
+        
+
+        int res = JOptionPane.showOptionDialog(null, "¿Desea continuar?!", "Seleccione una opcion", 0, JOptionPane.INFORMATION_MESSAGE, null, opciones, null);
+        System.out.println(res);
+
+        switch (res) {
+            case 0:
+                new menu();
+                break;
+            case 1:
+            case 2:
+                System.exit(0);
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + res);
+
+        }
+
+
+
     }
 
 
