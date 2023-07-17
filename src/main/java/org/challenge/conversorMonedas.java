@@ -42,7 +42,7 @@ public class conversorMonedas {
         opciones[0] = "Si";
         opciones[1] = "No";
         opciones[2] = "Cancelar";
-        
+
 
         int res = JOptionPane.showOptionDialog(null, "¿Desea continuar?!", "Seleccione una opcion", 0, JOptionPane.INFORMATION_MESSAGE, null, opciones, null);
         System.out.println(res);
@@ -53,9 +53,11 @@ public class conversorMonedas {
                 break;
             case 1:
             case 2:
+                JOptionPane.showMessageDialog(null, new JLabel("Programa Finalizado" , JLabel.CENTER));
                 System.exit(0);
                 break;
             default:
+                JOptionPane.showMessageDialog(null,"No es una opcion valida ");
                 throw new IllegalStateException("Unexpected value: " + res);
 
         }
