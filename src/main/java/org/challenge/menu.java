@@ -14,7 +14,7 @@ public class menu {
 
         switch (opcionSeleccionada){
             case "Conversor de Moneda": new conversorMonedas().menuMonedas(new conversorMonedas().cantidad());
-            case "Conversor de Temperatura": break;
+            case "Conversor de Temperatura": new conversorTemperatura().menuTemperatura(new conversorTemperatura().temperatura());
             default: JOptionPane.showMessageDialog(null,"No es una opcion valida ");
 
         }
