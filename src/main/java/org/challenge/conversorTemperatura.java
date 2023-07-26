@@ -29,12 +29,49 @@ public class conversorTemperatura {
                 JOptionPane.PLAIN_MESSAGE,null,monedas,
                 monedas[0]).toString();
 
-
         int opcionIndex = Arrays.asList(monedas).indexOf(opcionSeleccionada);
 
-        JOptionPane.showMessageDialog(null, new JLabel("Selecciono "+ monedas[opcionIndex], JLabel.CENTER));
+        JOptionPane.showMessageDialog(null, new JLabel(covertirTemperatura(opcionIndex, temperatura), JLabel.CENTER));
 
         continuar();
+    }
+
+    public String covertirTemperatura(int opcion,double temperatura){
+
+        switch(opcion){
+            case 1:
+                return temperatura+ " grados Celsius son " +(( temperatura * 1.8) + 32)+" grados Fahrenheit";
+            case 2:
+                return temperatura+ " grados Celsius son " +( temperatura + 273.15)+" grados Kelvin";
+            case 3:
+                return temperatura+ " grados Celsius son " +(( temperatura +273.15) * 9/5)+" grados Rankine";
+
+            case 4:
+                return temperatura+ " grados Fahrenheit son " +(( temperatura -32 ) / 1.8)+" grados Celsius";
+            case 5:
+                return temperatura+ " grados Fahrenheit son " +( (temperatura + 459.67)*5/9)+" grados Kelvin";
+            case 6:
+                return temperatura+ " grados Fahrenheit son " +( temperatura +459.67) +" grados Rankine";
+
+            case 7:
+                return temperatura+ " grados Kelvin son " +( temperatura -273.15)+" grados Celsius";
+            case 8:
+                return temperatura+ " grados Kelvin son " +( (temperatura * 9/5 )-459.67)+" grados Fahrenheit";
+            case 9:
+                return temperatura+ " grados Kelvin son " +( temperatura * 9/5) +" grados Rankine";
+
+            case 10:
+                return temperatura+ " grados Rankine son " +(( temperatura -491.67 ) * 5/9)+" grados Celsius";
+            case 11:
+                return temperatura+ " grados Rankine son " +( temperatura -459.67)+" grados Fahrenheit";
+            case 12:
+                return temperatura+ " grados Rankine son " +( temperatura * 5/9) +" grados Kelvin";
+
+            default:
+                return "opcion incorrecta";
+
+        }
+
     }
 
     public void continuar(){
@@ -45,7 +82,7 @@ public class conversorTemperatura {
         opciones[2] = "Cancelar";
 
 
-        int res = JOptionPane.showOptionDialog(null, "¿Desea continuar?!", "Seleccione una opcion", 0, JOptionPane.INFORMATION_MESSAGE, null, opciones, null);
+        int res = JOptionPane.showOptionDialog(null, " ¿Desea continuar?", "Seleccione una opcion", 0, JOptionPane.INFORMATION_MESSAGE, null, opciones, null);
         System.out.println(res);
 
         switch (res) {
